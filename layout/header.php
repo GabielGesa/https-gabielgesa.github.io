@@ -72,3 +72,6 @@ if (@$_SESSION['admin'] || @$_SESSION['accounting']) {
             </div>
         </nav>
     </body>
+<?php
+}
+?>
