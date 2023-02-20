@@ -1,0 +1,89 @@
+<?php
+
+@session_start();
+
+include "koneksi.php";
+
+if (@$_SESSION['admin'] || @$_SESSION['accounting']) {
+?>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+        <title></title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/style.css">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/08bf8df301.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top navbar-opacity-25" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#page-top">APLIKASI AKUNTANSI SEDERHANA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="home.php">Halaman Utama</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Jurnal
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink" role="menu">
+                                <li><a class="dropdown-item" href="jurnalPembelian.php">Jurnal Pembelian</a></li>
+                                <li><a class="dropdown-item" href="jurnalPenjualan.php">Jurnal Penjualan</a></li>
+                                <li><a class="dropdown-item" href="jurnalpenggajian.php">Jurnal Penggajian</a></li>
+                                <li><a class="dropdown-item" href="jurnalkas.php">Jurnal Penerimaan Kas</a></li>
+                                <li><a class="dropdown-item" href="jurnalpengeluaran.php">Jurnal Pengeluaran Kas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="jurnalumum.php" class="nav-link">Jurnal Umum </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="bukubesar.php" class="nav-link">Buku Besar </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#quotation" class="nav-link">Quotation</a>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <svg class="bi bi-person-circle" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                                Akun
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            <!--Jumbotron-->
+        <div class="p-5 mb-4 text-bg-light rounded-3">
+            <div class="container">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">AKUNTANSI ITU MUDAH</h1>
+                    <p class="col-md-7 fs-4">Kekuatan dari kata Tidak bisa; Kata tidak bisa membuat orang kuat menjadi lemah, orang yang melihat menjadi buta, membuat sedih, mengubah keberaninan menjadi pengecut, mengambil kecerdasan, menyebabkan orang kaya berpikir miskin, dan membatasi pencapaian orang hebat yang ada pada diri kita semua.
+                        <div class="vr"></div> <div class="col-md-8 fs-4 fw-bold"> Robert T Kiyosaki </div>
+                    </p>
+                    <button class="btn btn-primary btn-lg" type="button">Pengenalan</button>
+                </div>
+            </div>
+        </div>>
+        <!--End Jumbotron-->
+
+        <div class="panel panel-default" style="padding-top: 100px">
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+
+    </html>
+<?php
+} else {
+    header("location:index.php");
+}
+?>

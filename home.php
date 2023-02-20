@@ -1,0 +1,172 @@
+<?php
+
+@session_start();
+
+include "koneksi.php";
+
+if (@$_SESSION['admin'] || @$_SESSION['accounting']) {
+?>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+        <title>APLIKASI AKUNTANSI SEDERHANA</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/08bf8df301.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <style>
+            .jumbotron {
+                background-color: #A2D9FF;
+                padding-top: 2rem;
+            }
+            #jurnal {
+                background-color: #A2D9FF;
+            }
+            section {
+                padding-top: 5rem;
+            }
+        </style>
+        
+    </head>
+
+    <body id="Home">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow navbar-opacity-25" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#page-top">APLIKASI AKUNTANSI SEDERHANA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#Home">Halaman Utama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#Tentang">Tentang</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Jurnal
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink" role="menu">
+                                <li><a class="dropdown-item" href="jurnalPembelian.php">Jurnal Pembelian</a></li>
+                                <li><a class="dropdown-item" href="jurnalPenjualan.php">Jurnal Penjualan</a></li>
+                                <li><a class="dropdown-item" href="jurnalkas.php">Jurnal Penerimaan Kas</a></li>
+                                <li><a class="dropdown-item" href="jurnalpengeluaran.php">Jurnal Pengeluaran Kas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="jurnalumum.php" class="nav-link">Jurnal Umum </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="bukubesar.php" class="nav-link">Buku Besar </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="bi bi-person"> Akun</i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Jumbotron-->
+        <section class="jumbotron jumbotron-fluid text-center">
+        <br><br><br><br>
+            <img src="bootstrap/img/aas.png" alt="APLIKASI AKUNTANSI SEDERHANA" width="200" class="rounded-circle img-thumbnail">
+        <div class="container-fluid">
+            <h1 class="display-4 fw-bold">APLIKASI AKUNTANSI SEDERHANA</h1>
+            <p class="lead">Sebuah aplikasi akuntansi yang sederhana dan lengkap</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,64L48,85.3C96,107,192,149,288,170.7C384,192,480,192,576,165.3C672,139,768,85,864,96C960,107,1056,181,1152,176C1248,171,1344,85,1392,42.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        
+        </section>
+        <!--End Jumbotron-->
+
+        <!-- Tentang -->
+        <section id="Tentang">
+            <div class="container">
+                <div class="row text-center mb-3">
+                    <div class="col">
+                        <h2>Tentang Aplikasi</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center fs-5 text-center">
+                    <div class="col-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum cupiditate, quod odio voluptates quos delectus labore iusto a provident distinctio?
+                    </div>
+                    <div class="col-4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et voluptate impedit corporis non nulla hic sunt reiciendis aperiam expedita odio?
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#a2d9ff" fill-opacity="1" d="M0,160L26.7,138.7C53.3,117,107,75,160,85.3C213.3,96,267,160,320,176C373.3,192,427,160,480,165.3C533.3,171,587,213,640,229.3C693.3,245,747,235,800,208C853.3,181,907,139,960,144C1013.3,149,1067,203,1120,213.3C1173.3,224,1227,192,1280,176C1333.3,160,1387,160,1413,160L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>
+        </section>
+        <!-- Ahkir Tentang -->
+
+        <!-- Jurnal -->
+        <section id="jurnal">
+            <div class="container">
+                <div class="row text-center mb-3">
+                    <div class="col">
+                        <h2>Jurnal</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Jurnal Pembelian</h5>
+                                <p class="card-text mb-3">Jurnal pembelian merupakan jurnal untuk catat segala jenis pembelian dalam kredit.</p>
+                                <a href="jurnalPembelian.php" class="btn btn-primary">Jurnal Pembelian</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Jurnal Penjualan</h5>
+                                <p class="card-text mb-3">Jurnal penjualan merupakan jurnal untuk catat segala jenis penjualan dalam kredit.</p>
+                                <a href="jurnalPenjualan.php" class="btn btn-primary">Jurnal Penjualan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Jurnal Penerimaan Kas</h5>
+                                <p class="card-text mb-3">Jurnal penerimaan kas merupakan jurnal untuk catat segala jenis transaksi yang menyebabkan kas bertambah.</p>
+                                <a href="jurnalkas.php" class="btn btn-primary">Jurnal Penerimaan Kas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Jurnal Pengeluaran Kas</h5>
+                                <p class="card-text mb-3">Jurnal pengeluaran kas merupakan jurnal untuk catat segala jenis transaksi yang menyebabkan kas berkurang.</p>
+                                <a href="jurnalpengeluaran.php" class="btn btn-primary">Jurnal Pengeluaran Kas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,224L80,218.7C160,213,320,203,480,213.3C640,224,800,256,960,234.7C1120,213,1280,139,1360,101.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>    
+        </section>
+        <!-- Ahkir Jurnal -->
+
+        <!-- Footer -->
+        <footer class="text-bg-dark fw-bold text-center p-3">
+            Created by <a href="https://www.instagram.com/gabielgesa/"class="text-white">Gabiel Gesa Widi Purnomo</a>
+        </footer>
+        <!-- Ahkir Footer -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+
+    </html>
+<?php
+} else {
+    header("location:index.php");
+}
+?>

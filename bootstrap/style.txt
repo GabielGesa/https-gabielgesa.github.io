@@ -1,0 +1,15 @@
+/* ini adalah style jumbotron */
+.p-5 {
+    background-image: url(img/slider1.jpg);
+    background-size: cover;
+    height: 600px;
+    text-align: justify;
+}
+.p-5 .display-5 {
+    color: black;
+}
+.p-5 .col-md-7 {
+    color:black;
+}
+
+/* ini adalah style slider */
