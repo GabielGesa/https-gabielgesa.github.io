@@ -2,7 +2,7 @@
 
 @session_start();
 
-include "koneksi.php";
+include "koneksi.html";
 
 if (@$_SESSION['admin'] || @$_SESSION['accounting']) {
 ?>
@@ -89,7 +89,7 @@ if (@$_SESSION['admin'] || @$_SESSION['accounting']) {
                 <td>Total</td>
                 </tr>
                 <?php
-                require ('koneksi.php');
+                require ('koneksi.html');
                 $sql = mysqli_query($koneksi, "SELECT * FROM jurnalumum ORDER BY tgl_pembelian ASC") or die(mysqli_error());
             
                 while ($data = mysqli_fetch_array($sql)){
@@ -119,6 +119,6 @@ if (@$_SESSION['admin'] || @$_SESSION['accounting']) {
     </html>
 <?php
 } else {
-    header("location:index.php");
+    header("location:index.html");
 }
 ?>
