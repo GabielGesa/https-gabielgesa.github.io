@@ -1,11 +1,11 @@
 <?php
 @session_start();
-include "koneksi.php";
+include "koneksi.html";
 
 if (@$_SESSION['accounting'] || @$_SESSION['admin']) {
-	header("location:home.php");
+	header("location:home.html");
 } elseif (@$_SESSION['manager']) {
-	header("location:manager/jurnalUmum.php");
+	header("location:manager/jurnalUmum.html");
 } else {
 ?>
 
