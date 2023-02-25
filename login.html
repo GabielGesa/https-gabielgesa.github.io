@@ -1,7 +1,7 @@
 <?php 
 	
 	@session_start();
-	include "koneksi.php";
+	include "koneksi.html";
 
 	$user = @$_POST['username'];
 	$pass = @$_POST['passlogin'];
@@ -18,24 +18,24 @@
 
 						@$_SESSION['admin'] = $data['id'];
 
-						header("location:home.php");
+						header("location:home.html");
 
 					} else if ($data['level'] == "manager") {
 						
 						@$_SESSION['manager'] = $data['id'];
 
-						header("location:manager/jurnalUmum.php");
+						header("location:manager/jurnalUmum.html");
 					}
 					else if ($data['level'] == "accounting") {
 						
 						@$_SESSION['accounting'] = $data['id'];
 
-						header("location:home.php");
+						header("location:home.html");
 					}					
 				
 			} 
 			else{
-				?> <script type="text/javascript">alert("Usename / password salah ");window.location.href='index.php';</script> <?php
+				?> <script type="text/javascript">alert("Usename / password salah ");window.location.href='index.html';</script> <?php
 			}
 		
 
