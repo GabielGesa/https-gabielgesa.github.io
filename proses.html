@@ -1,5 +1,5 @@
 <?php 
-	require('koneksi.php');
+	require('koneksi.html');
 
 	if (isset($_POST['tambahdata'])) {
 		
@@ -25,7 +25,7 @@
         	 				  VALUES ('$tgl','$jPembelian','$temp','$saldo','$name','$saldo')");
         }
 
-        header("location: jurnalpembelian.php");
+        header("location: jurnalpembelian.html");
 	}
 	
 	elseif (isset($_POST['tambah_penjualan'])) {
@@ -53,7 +53,7 @@
    
         }
 
-        header("location: jurnalpenjualan.php");
+        header("location: jurnalpenjualan.html");
 	}
 
 	elseif (isset($_POST['tambah_penggajian'])) {
@@ -81,7 +81,7 @@
    
         }
 
-        header("location: jurnalpenggajian.php");
+        header("location: jurnalpenggajian.html");
 	}
 
 	elseif (isset($_POST['tambah_penerimaan'])) {
@@ -109,7 +109,7 @@
    
         }
 
-        header("location: jurnalkas.php");
+        header("location: jurnalkas.html");
 	}
 
 	elseif (isset($_POST['tambah_pengeluaran'])) {
@@ -137,6 +137,6 @@
    
         }
 
-        header("location: jurnalpengeluaran.php");
+        header("location: jurnalpengeluaran.html");
 	}
  ?>
